@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:aasg="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/PowerPlant/0.3" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" xmlns:gmlsf="http://www.opengis.net/gmlsf" targetNamespace="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/PowerPlant/0.3" elementFormDefault="qualified" version="0.03">
+<xs:schema xmlns:aasg="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/PowerPlantFacility/0.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" xmlns:gmlsf="http://www.opengis.net/gmlsf" targetNamespace="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/PowerPlantFacility/0.2" elementFormDefault="qualified" version="0.02">
 	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gmlsf" schemaLocation="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd"/>
 	<xs:annotation>
-		<!-- This XSD document, including XML schema, indicates the content requested for data collected from power plant for the AASG geothermal data project.  Typically, information includes location information for the facility, system type and contact information for the facility.  The PowerPlantFacilityURI for a particular site is the cross-referencing link (foreign key) used to associate the record with additional information and metadata.  Each facility should have a unique PowerPlantFacilityURI. -->
-		<!--This XSD document was created on 2012-12-18 by Celia Coleman, AZGS.  This schema is based on the data available in the AASG Web Feature Services created for the power plants in Nevada. -->
+		<!-- This XSD document, including XML schema, indicates the content requested for data collected from power plant facilities for the AASG geothermal data project.  Typically, information includes location information for the facility, system type, temperature of the resource and contact information for the facility.  The PowerPlantFacilityURI for a particular site is the cross-referencing link (foreign key) used to associate the record with additional information and metadata.  Each facility should have a unique PowerPlantFacilityURI. -->
+		<!--This XSD document was created on 2012-02-24 by Celia Coleman, AZGS.  This schema is based on the data available in the AASG Web Feature Services created for the power plants in Nevada. -->
 		<xs:appinfo source="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd">
 			<gmlsf:ComplianceLevel>0</gmlsf:ComplianceLevel>
 			<gmlsf:GMLProfileSchema>
 http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gmlsf:GMLProfileSchema>
 		</xs:appinfo>
 	</xs:annotation>
-	<xs:element name="PowerPlant" type="aasg:PowerPlantType" substitutionGroup="gml:_Feature"/>
-	<xs:complexType name="PowerPlantType">
+	<xs:element name="PowerPlantFacility" type="aasg:PowerPlantFacilityType" substitutionGroup="gml:_Feature"/>
+	<xs:complexType name="PowerPlantFacilityType">
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractFeatureType">
 				<xs:sequence>
 					<xs:element name="OBJECTID" type="xs:int" minOccurs="0"/>
-					<xs:element name="FacilityURI">
+					<xs:element name="PowerPlantFacilityURI">
 						<xs:simpleType>
 							<xs:restriction base="xs:string">
 								<xs:maxLength value="255"/>
@@ -36,7 +36,7 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 					<xs:element name="PLSS_Meridians" type="xs:string" minOccurs="0"/>
 					<xs:element name="Township" type="xs:string" minOccurs="0"/>
 					<xs:element name="Range" type="xs:string" minOccurs="0"/>
-					<xs:element name="Section_" type="xs:double" minOccurs="0"/>
+					<xs:element name="Section_" type="xs:string" minOccurs="0"/>
 					<xs:element name="SectionPart" type="xs:string" minOccurs="0"/>
 					<xs:element name="UTM_E" type="xs:double" minOccurs="0"/>
 					<xs:element name="UTM_N" type="xs:double" minOccurs="0"/>
@@ -50,7 +50,7 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 					<xs:element name="LocationUncertaintyCode" type="xs:string" minOccurs="0"/>
 					<xs:element name="LocationUncertaintyRadius" type="xs:double" minOccurs="0"/>
 					<xs:element name="LocationKeyword" type="xs:string" minOccurs="0"/>
-					<xs:element name="Notes" type="xs:string" minOccurs="0"/>
+					<xs:element name="Notes" type="xs:string"/>
 					<xs:element name="UseApplication" type="xs:string"/>
 					<xs:element name="Capacity_MW" type="xs:double"/>
 					<xs:element name="FacilityContact" type="xs:string"/>
@@ -61,7 +61,7 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 					<xs:element name="Source" type="xs:string"/>
 					<xs:element name="FluidTemperature_C" type="xs:double" minOccurs="0"/>
 					<xs:element name="Flow_gpm" type="xs:double" minOccurs="0"/>
-					<xs:element name="RelatedResource" type="xs:string" minOccurs="0"/>
+					<xs:element name="RelatedResource" type="xs:double" minOccurs="0"/>
 					<xs:element name="MetadataURI" minOccurs="0">
 						<xs:simpleType>
 							<xs:restriction base="xs:string">
