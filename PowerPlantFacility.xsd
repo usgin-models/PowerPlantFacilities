@@ -17,7 +17,7 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 			<xs:extension base="gml:AbstractFeatureType">
 				<xs:sequence>
 					<xs:element name="OBJECTID" type="xs:int" minOccurs="0"/>
-					<xs:element name="PowerPlantFacilityURI">
+					<xs:element name="FacilityURI">
 						<xs:simpleType>
 							<xs:restriction base="xs:string">
 								<xs:maxLength value="255"/>
