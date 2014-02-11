@@ -217,7 +217,7 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 							<xs:documentation>Fluid production flow rate.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="RelatedResource" type="xs:double" minOccurs="0">
+					<xs:element name="RelatedResource" type="xs:string" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>This may be one to many http links to resources (logs, pictures or other documents if available online. Should be an http:// address (URL)) related to the observation described in each record. Delimit multiple values with the pipe '|' character.</xs:documentation>
 						</xs:annotation>
